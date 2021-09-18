@@ -1,0 +1,868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="18.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BOOK_COURCE">
+          <Key>
+            <PropertyRef Name="ID_CUS" />
+            <PropertyRef Name="ID_LESSION" />
+          </Key>
+          <Property Name="ID_CUS" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_LESSION" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CMT">
+          <Key>
+            <PropertyRef Name="ID_CMT" />
+          </Key>
+          <Property Name="ID_CMT" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_LESS" Type="number" Precision="38" Scale="0" />
+          <Property Name="CMT" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="COUNTRIES">
+          <Key>
+            <PropertyRef Name="COUNTRY_ID" />
+          </Key>
+          <Property Name="COUNTRY_ID" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="COUNTRY_NAME" Type="varchar2" MaxLength="40" />
+          <Property Name="REGION_ID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="COURSE">
+          <Key>
+            <PropertyRef Name="ID_COURSE" />
+          </Key>
+          <Property Name="ID_COURSE" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="ID_CUS" />
+          </Key>
+          <Property Name="ID_CUS" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME_CUS" Type="varchar2" MaxLength="50" />
+          <Property Name="EMAIL_CUS" Type="varchar2" MaxLength="50" />
+          <Property Name="PHONE_CUS" Type="varchar2" MaxLength="12" />
+          <Property Name="DATE_CUS" Type="date" />
+          <Property Name="USER_NAME" Type="varchar2" MaxLength="16" />
+          <Property Name="ROLE" Type="number" Precision="38" Scale="0" />
+          <Property Name="PASSWORD" Type="varchar2" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="DEPARTMENTS">
+          <Key>
+            <PropertyRef Name="DEPARTMENT_ID" />
+          </Key>
+          <Property Name="DEPARTMENT_ID" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="MANAGER_ID" Type="number" Precision="6" Scale="0" />
+          <Property Name="LOCATION_ID" Type="number" Precision="4" Scale="0" />
+        </EntityType>
+        <EntityType Name="EMPLOYEES">
+          <Key>
+            <PropertyRef Name="EMPLOYEE_ID" />
+          </Key>
+          <Property Name="EMPLOYEE_ID" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="varchar2" MaxLength="20" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="25" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="25" Nullable="false" />
+          <Property Name="PHONE_NUMBER" Type="varchar2" MaxLength="20" />
+          <Property Name="HIRE_DATE" Type="date" Nullable="false" />
+          <Property Name="JOB_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="SALARY" Type="number" Precision="8" Scale="2" />
+          <Property Name="COMMISSION_PCT" Type="number" Precision="2" Scale="2" />
+          <Property Name="MANAGER_ID" Type="number" Precision="6" Scale="0" />
+          <Property Name="DEPARTMENT_ID" Type="number" Precision="4" Scale="0" />
+        </EntityType>
+        <EntityType Name="JOB_HISTORY">
+          <Key>
+            <PropertyRef Name="EMPLOYEE_ID" />
+            <PropertyRef Name="START_DATE" />
+          </Key>
+          <Property Name="EMPLOYEE_ID" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="START_DATE" Type="date" Nullable="false" />
+          <Property Name="END_DATE" Type="date" Nullable="false" />
+          <Property Name="JOB_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="DEPARTMENT_ID" Type="number" Precision="4" Scale="0" />
+        </EntityType>
+        <EntityType Name="JOBS">
+          <Key>
+            <PropertyRef Name="JOB_ID" />
+          </Key>
+          <Property Name="JOB_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="JOB_TITLE" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="MIN_SALARY" Type="number" Precision="6" Scale="0" />
+          <Property Name="MAX_SALARY" Type="number" Precision="6" Scale="0" />
+        </EntityType>
+        <EntityType Name="LESSION">
+          <Key>
+            <PropertyRef Name="ID_LESSION" />
+          </Key>
+          <Property Name="ID_LESSION" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME_LESSION" Type="varchar2" MaxLength="50" />
+          <Property Name="LINK_VIDEO" Type="varchar2" MaxLength="100" />
+          <Property Name="ID_COURSE" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="LOCATIONS">
+          <Key>
+            <PropertyRef Name="LOCATION_ID" />
+          </Key>
+          <Property Name="LOCATION_ID" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="STREET_ADDRESS" Type="varchar2" MaxLength="40" />
+          <Property Name="POSTAL_CODE" Type="varchar2" MaxLength="12" />
+          <Property Name="CITY" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="STATE_PROVINCE" Type="varchar2" MaxLength="25" />
+          <Property Name="COUNTRY_ID" Type="char" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="REGIONS">
+          <Key>
+            <PropertyRef Name="REGION_ID" />
+          </Key>
+          <Property Name="REGION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="REGION_NAME" Type="varchar2" MaxLength="25" />
+        </EntityType>
+        <Association Name="COUNTR_REG_FK">
+          <End Role="REGIONS" Type="Self.REGIONS" Multiplicity="0..1" />
+          <End Role="COUNTRIES" Type="Self.COUNTRIES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REGIONS">
+              <PropertyRef Name="REGION_ID" />
+            </Principal>
+            <Dependent Role="COUNTRIES">
+              <PropertyRef Name="REGION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEPT_LOC_FK">
+          <End Role="LOCATIONS" Type="Self.LOCATIONS" Multiplicity="0..1" />
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOCATIONS">
+              <PropertyRef Name="LOCATION_ID" />
+            </Principal>
+            <Dependent Role="DEPARTMENTS">
+              <PropertyRef Name="LOCATION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEPT_MGR_FK">
+          <End Role="EMPLOYEES" Type="Self.EMPLOYEES" Multiplicity="0..1" />
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLOYEES">
+              <PropertyRef Name="EMPLOYEE_ID" />
+            </Principal>
+            <Dependent Role="DEPARTMENTS">
+              <PropertyRef Name="MANAGER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EMP_DEPT_FK">
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENTS" Multiplicity="0..1" />
+          <End Role="EMPLOYEES" Type="Self.EMPLOYEES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTMENTS">
+              <PropertyRef Name="DEPARTMENT_ID" />
+            </Principal>
+            <Dependent Role="EMPLOYEES">
+              <PropertyRef Name="DEPARTMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EMP_JOB_FK">
+          <End Role="JOBS" Type="Self.JOBS" Multiplicity="1" />
+          <End Role="EMPLOYEES" Type="Self.EMPLOYEES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JOBS">
+              <PropertyRef Name="JOB_ID" />
+            </Principal>
+            <Dependent Role="EMPLOYEES">
+              <PropertyRef Name="JOB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EMP_MANAGER_FK">
+          <End Role="EMPLOYEES" Type="Self.EMPLOYEES" Multiplicity="0..1" />
+          <End Role="EMPLOYEES1" Type="Self.EMPLOYEES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLOYEES">
+              <PropertyRef Name="EMPLOYEE_ID" />
+            </Principal>
+            <Dependent Role="EMPLOYEES1">
+              <PropertyRef Name="MANAGER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BC1">
+          <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="1" />
+          <End Role="BOOK_COURCE" Type="Self.BOOK_COURCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="ID_CUS" />
+            </Principal>
+            <Dependent Role="BOOK_COURCE">
+              <PropertyRef Name="ID_CUS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BC2">
+          <End Role="LESSION" Type="Self.LESSION" Multiplicity="1" />
+          <End Role="BOOK_COURCE" Type="Self.BOOK_COURCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LESSION">
+              <PropertyRef Name="ID_LESSION" />
+            </Principal>
+            <Dependent Role="BOOK_COURCE">
+              <PropertyRef Name="ID_LESSION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CMT">
+          <End Role="LESSION" Type="Self.LESSION" Multiplicity="0..1" />
+          <End Role="CMT" Type="Self.CMT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LESSION">
+              <PropertyRef Name="ID_LESSION" />
+            </Principal>
+            <Dependent Role="CMT">
+              <PropertyRef Name="ID_LESS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LESSION">
+          <End Role="COURSE" Type="Self.COURSE" Multiplicity="0..1" />
+          <End Role="LESSION" Type="Self.LESSION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COURSE">
+              <PropertyRef Name="ID_COURSE" />
+            </Principal>
+            <Dependent Role="LESSION">
+              <PropertyRef Name="ID_COURSE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JHIST_DEPT_FK">
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENTS" Multiplicity="0..1" />
+          <End Role="JOB_HISTORY" Type="Self.JOB_HISTORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTMENTS">
+              <PropertyRef Name="DEPARTMENT_ID" />
+            </Principal>
+            <Dependent Role="JOB_HISTORY">
+              <PropertyRef Name="DEPARTMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JHIST_EMP_FK">
+          <End Role="EMPLOYEES" Type="Self.EMPLOYEES" Multiplicity="1" />
+          <End Role="JOB_HISTORY" Type="Self.JOB_HISTORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLOYEES">
+              <PropertyRef Name="EMPLOYEE_ID" />
+            </Principal>
+            <Dependent Role="JOB_HISTORY">
+              <PropertyRef Name="EMPLOYEE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JHIST_JOB_FK">
+          <End Role="JOBS" Type="Self.JOBS" Multiplicity="1" />
+          <End Role="JOB_HISTORY" Type="Self.JOB_HISTORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JOBS">
+              <PropertyRef Name="JOB_ID" />
+            </Principal>
+            <Dependent Role="JOB_HISTORY">
+              <PropertyRef Name="JOB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LOC_C_ID_FK">
+          <End Role="COUNTRIES" Type="Self.COUNTRIES" Multiplicity="0..1" />
+          <End Role="LOCATIONS" Type="Self.LOCATIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COUNTRIES">
+              <PropertyRef Name="COUNTRY_ID" />
+            </Principal>
+            <Dependent Role="LOCATIONS">
+              <PropertyRef Name="COUNTRY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="BOOK_COURCE" EntityType="Self.BOOK_COURCE" Schema="HR" store:Type="Tables" />
+          <EntitySet Name="CMT" EntityType="Self.CMT" Schema="HR" store:Type="Tables" />
+          <EntitySet Name="COUNTRIES" EntityType="Self.COUNTRIES" Schema="HR" store:Type="Tables" />
+          <EntitySet Name="COURSE" EntityType="Self.COURSE" Schema="HR" store:Type="Tables" />
+          <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="HR" store:Type="Tables" />
+          <EntitySet Name="DEPARTMENTS" EntityType="Self.DEPARTMENTS" Schema="HR" store:Type="Tables" />
+          <EntitySet Name="EMPLOYEES" EntityType="Self.EMPLOYEES" Schema="HR" store:Type="Tables" />
+          <EntitySet Name="JOB_HISTORY" EntityType="Self.JOB_HISTORY" Schema="HR" store:Type="Tables" />
+          <EntitySet Name="JOBS" EntityType="Self.JOBS" Schema="HR" store:Type="Tables" />
+          <EntitySet Name="LESSION" EntityType="Self.LESSION" Schema="HR" store:Type="Tables" />
+          <EntitySet Name="LOCATIONS" EntityType="Self.LOCATIONS" Schema="HR" store:Type="Tables" />
+          <EntitySet Name="REGIONS" EntityType="Self.REGIONS" Schema="HR" store:Type="Tables" />
+          <AssociationSet Name="COUNTR_REG_FK" Association="Self.COUNTR_REG_FK">
+            <End Role="REGIONS" EntitySet="REGIONS" />
+            <End Role="COUNTRIES" EntitySet="COUNTRIES" />
+          </AssociationSet>
+          <AssociationSet Name="DEPT_LOC_FK" Association="Self.DEPT_LOC_FK">
+            <End Role="LOCATIONS" EntitySet="LOCATIONS" />
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="DEPT_MGR_FK" Association="Self.DEPT_MGR_FK">
+            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="EMP_DEPT_FK" Association="Self.EMP_DEPT_FK">
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+          </AssociationSet>
+          <AssociationSet Name="EMP_JOB_FK" Association="Self.EMP_JOB_FK">
+            <End Role="JOBS" EntitySet="JOBS" />
+            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+          </AssociationSet>
+          <AssociationSet Name="EMP_MANAGER_FK" Association="Self.EMP_MANAGER_FK">
+            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+            <End Role="EMPLOYEES1" EntitySet="EMPLOYEES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BC1" Association="Self.FK_BC1">
+            <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+            <End Role="BOOK_COURCE" EntitySet="BOOK_COURCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BC2" Association="Self.FK_BC2">
+            <End Role="LESSION" EntitySet="LESSION" />
+            <End Role="BOOK_COURCE" EntitySet="BOOK_COURCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CMT" Association="Self.FK_CMT">
+            <End Role="LESSION" EntitySet="LESSION" />
+            <End Role="CMT" EntitySet="CMT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LESSION" Association="Self.FK_LESSION">
+            <End Role="COURSE" EntitySet="COURSE" />
+            <End Role="LESSION" EntitySet="LESSION" />
+          </AssociationSet>
+          <AssociationSet Name="JHIST_DEPT_FK" Association="Self.JHIST_DEPT_FK">
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+            <End Role="JOB_HISTORY" EntitySet="JOB_HISTORY" />
+          </AssociationSet>
+          <AssociationSet Name="JHIST_EMP_FK" Association="Self.JHIST_EMP_FK">
+            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+            <End Role="JOB_HISTORY" EntitySet="JOB_HISTORY" />
+          </AssociationSet>
+          <AssociationSet Name="JHIST_JOB_FK" Association="Self.JHIST_JOB_FK">
+            <End Role="JOBS" EntitySet="JOBS" />
+            <End Role="JOB_HISTORY" EntitySet="JOB_HISTORY" />
+          </AssociationSet>
+          <AssociationSet Name="LOC_C_ID_FK" Association="Self.LOC_C_ID_FK">
+            <End Role="COUNTRIES" EntitySet="COUNTRIES" />
+            <End Role="LOCATIONS" EntitySet="LOCATIONS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="COUNTRy">
+          <Key>
+            <PropertyRef Name="COUNTRY_ID" />
+          </Key>
+          <Property Name="COUNTRY_ID" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="COUNTRY_NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="REGION_ID" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="REGION" Relationship="Self.COUNTR_REG_FK" FromRole="COUNTRIES" ToRole="REGIONS" />
+          <NavigationProperty Name="LOCATIONS" Relationship="Self.LOC_C_ID_FK" FromRole="COUNTRIES" ToRole="LOCATIONS" />
+        </EntityType>
+        <EntityType Name="DEPARTMENT">
+          <Key>
+            <PropertyRef Name="DEPARTMENT_ID" />
+          </Key>
+          <Property Name="DEPARTMENT_ID" Type="Int16" Nullable="false" />
+          <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MANAGER_ID" Type="Int32" />
+          <Property Name="LOCATION_ID" Type="Int16" />
+          <NavigationProperty Name="LOCATION" Relationship="Self.DEPT_LOC_FK" FromRole="DEPARTMENTS" ToRole="LOCATIONS" />
+          <NavigationProperty Name="EMPLOYEE" Relationship="Self.DEPT_MGR_FK" FromRole="DEPARTMENTS" ToRole="EMPLOYEES" />
+          <NavigationProperty Name="EMPLOYEES" Relationship="Self.EMP_DEPT_FK" FromRole="DEPARTMENTS" ToRole="EMPLOYEES" />
+          <NavigationProperty Name="JOB_HISTORY" Relationship="Self.JHIST_DEPT_FK" FromRole="DEPARTMENTS" ToRole="JOB_HISTORY" />
+        </EntityType>
+        <EntityType Name="EMPLOYEE">
+          <Key>
+            <PropertyRef Name="EMPLOYEE_ID" />
+          </Key>
+          <Property Name="EMPLOYEE_ID" Type="Int32" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PHONE_NUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="HIRE_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="JOB_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SALARY" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="COMMISSION_PCT" Type="Decimal" Precision="2" Scale="2" />
+          <Property Name="MANAGER_ID" Type="Int32" />
+          <Property Name="DEPARTMENT_ID" Type="Int16" />
+          <NavigationProperty Name="DEPARTMENTS" Relationship="Self.DEPT_MGR_FK" FromRole="EMPLOYEES" ToRole="DEPARTMENTS" />
+          <NavigationProperty Name="DEPARTMENT" Relationship="Self.EMP_DEPT_FK" FromRole="EMPLOYEES" ToRole="DEPARTMENTS" />
+          <NavigationProperty Name="JOB" Relationship="Self.EMP_JOB_FK" FromRole="EMPLOYEES" ToRole="JOBS" />
+          <NavigationProperty Name="EMPLOYEES1" Relationship="Self.EMP_MANAGER_FK" FromRole="EMPLOYEES" ToRole="EMPLOYEES1" />
+          <NavigationProperty Name="EMPLOYEE1" Relationship="Self.EMP_MANAGER_FK" FromRole="EMPLOYEES1" ToRole="EMPLOYEES" />
+          <NavigationProperty Name="JOB_HISTORY" Relationship="Self.JHIST_EMP_FK" FromRole="EMPLOYEES" ToRole="JOB_HISTORY" />
+        </EntityType>
+        <EntityType Name="JOB_HISTORY">
+          <Key>
+            <PropertyRef Name="EMPLOYEE_ID" />
+            <PropertyRef Name="START_DATE" />
+          </Key>
+          <Property Name="EMPLOYEE_ID" Type="Int32" Nullable="false" />
+          <Property Name="START_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="END_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="JOB_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DEPARTMENT_ID" Type="Int16" />
+          <NavigationProperty Name="DEPARTMENT" Relationship="Self.JHIST_DEPT_FK" FromRole="JOB_HISTORY" ToRole="DEPARTMENTS" />
+          <NavigationProperty Name="EMPLOYEE" Relationship="Self.JHIST_EMP_FK" FromRole="JOB_HISTORY" ToRole="EMPLOYEES" />
+          <NavigationProperty Name="JOB" Relationship="Self.JHIST_JOB_FK" FromRole="JOB_HISTORY" ToRole="JOBS" />
+        </EntityType>
+        <EntityType Name="JOB">
+          <Key>
+            <PropertyRef Name="JOB_ID" />
+          </Key>
+          <Property Name="JOB_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="JOB_TITLE" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MIN_SALARY" Type="Int32" />
+          <Property Name="MAX_SALARY" Type="Int32" />
+          <NavigationProperty Name="EMPLOYEES" Relationship="Self.EMP_JOB_FK" FromRole="JOBS" ToRole="EMPLOYEES" />
+          <NavigationProperty Name="JOB_HISTORY" Relationship="Self.JHIST_JOB_FK" FromRole="JOBS" ToRole="JOB_HISTORY" />
+        </EntityType>
+        <EntityType Name="LOCATION">
+          <Key>
+            <PropertyRef Name="LOCATION_ID" />
+          </Key>
+          <Property Name="LOCATION_ID" Type="Int16" Nullable="false" />
+          <Property Name="STREET_ADDRESS" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="POSTAL_CODE" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="CITY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STATE_PROVINCE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="COUNTRY_ID" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="COUNTRy" Relationship="Self.LOC_C_ID_FK" FromRole="LOCATIONS" ToRole="COUNTRIES" />
+          <NavigationProperty Name="DEPARTMENTS" Relationship="Self.DEPT_LOC_FK" FromRole="LOCATIONS" ToRole="DEPARTMENTS" />
+        </EntityType>
+        <EntityType Name="REGION">
+          <Key>
+            <PropertyRef Name="REGION_ID" />
+          </Key>
+          <Property Name="REGION_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="REGION_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="COUNTRIES" Relationship="Self.COUNTR_REG_FK" FromRole="REGIONS" ToRole="COUNTRIES" />
+        </EntityType>
+        <Association Name="COUNTR_REG_FK">
+          <End Role="REGIONS" Type="Self.REGION" Multiplicity="0..1" />
+          <End Role="COUNTRIES" Type="Self.COUNTRy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REGIONS">
+              <PropertyRef Name="REGION_ID" />
+            </Principal>
+            <Dependent Role="COUNTRIES">
+              <PropertyRef Name="REGION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LOC_C_ID_FK">
+          <End Role="COUNTRIES" Type="Self.COUNTRy" Multiplicity="0..1" />
+          <End Role="LOCATIONS" Type="Self.LOCATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COUNTRIES">
+              <PropertyRef Name="COUNTRY_ID" />
+            </Principal>
+            <Dependent Role="LOCATIONS">
+              <PropertyRef Name="COUNTRY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEPT_LOC_FK">
+          <End Role="LOCATIONS" Type="Self.LOCATION" Multiplicity="0..1" />
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOCATIONS">
+              <PropertyRef Name="LOCATION_ID" />
+            </Principal>
+            <Dependent Role="DEPARTMENTS">
+              <PropertyRef Name="LOCATION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DEPT_MGR_FK">
+          <End Role="EMPLOYEES" Type="Self.EMPLOYEE" Multiplicity="0..1" />
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLOYEES">
+              <PropertyRef Name="EMPLOYEE_ID" />
+            </Principal>
+            <Dependent Role="DEPARTMENTS">
+              <PropertyRef Name="MANAGER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EMP_DEPT_FK">
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENT" Multiplicity="0..1" />
+          <End Role="EMPLOYEES" Type="Self.EMPLOYEE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTMENTS">
+              <PropertyRef Name="DEPARTMENT_ID" />
+            </Principal>
+            <Dependent Role="EMPLOYEES">
+              <PropertyRef Name="DEPARTMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JHIST_DEPT_FK">
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENT" Multiplicity="0..1" />
+          <End Role="JOB_HISTORY" Type="Self.JOB_HISTORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTMENTS">
+              <PropertyRef Name="DEPARTMENT_ID" />
+            </Principal>
+            <Dependent Role="JOB_HISTORY">
+              <PropertyRef Name="DEPARTMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EMP_JOB_FK">
+          <End Role="JOBS" Type="Self.JOB" Multiplicity="1" />
+          <End Role="EMPLOYEES" Type="Self.EMPLOYEE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JOBS">
+              <PropertyRef Name="JOB_ID" />
+            </Principal>
+            <Dependent Role="EMPLOYEES">
+              <PropertyRef Name="JOB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EMP_MANAGER_FK">
+          <End Role="EMPLOYEES" Type="Self.EMPLOYEE" Multiplicity="0..1" />
+          <End Role="EMPLOYEES1" Type="Self.EMPLOYEE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLOYEES">
+              <PropertyRef Name="EMPLOYEE_ID" />
+            </Principal>
+            <Dependent Role="EMPLOYEES1">
+              <PropertyRef Name="MANAGER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JHIST_EMP_FK">
+          <End Role="EMPLOYEES" Type="Self.EMPLOYEE" Multiplicity="1" />
+          <End Role="JOB_HISTORY" Type="Self.JOB_HISTORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EMPLOYEES">
+              <PropertyRef Name="EMPLOYEE_ID" />
+            </Principal>
+            <Dependent Role="JOB_HISTORY">
+              <PropertyRef Name="EMPLOYEE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JHIST_JOB_FK">
+          <End Role="JOBS" Type="Self.JOB" Multiplicity="1" />
+          <End Role="JOB_HISTORY" Type="Self.JOB_HISTORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JOBS">
+              <PropertyRef Name="JOB_ID" />
+            </Principal>
+            <Dependent Role="JOB_HISTORY">
+              <PropertyRef Name="JOB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HREntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="COUNTRIES" EntityType="Self.COUNTRy" />
+          <EntitySet Name="DEPARTMENTS" EntityType="Self.DEPARTMENT" />
+          <EntitySet Name="EMPLOYEES" EntityType="Self.EMPLOYEE" />
+          <EntitySet Name="JOB_HISTORY" EntityType="Self.JOB_HISTORY" />
+          <EntitySet Name="JOBS" EntityType="Self.JOB" />
+          <EntitySet Name="LOCATIONS" EntityType="Self.LOCATION" />
+          <EntitySet Name="REGIONS" EntityType="Self.REGION" />
+          <AssociationSet Name="COUNTR_REG_FK" Association="Self.COUNTR_REG_FK">
+            <End Role="REGIONS" EntitySet="REGIONS" />
+            <End Role="COUNTRIES" EntitySet="COUNTRIES" />
+          </AssociationSet>
+          <AssociationSet Name="LOC_C_ID_FK" Association="Self.LOC_C_ID_FK">
+            <End Role="COUNTRIES" EntitySet="COUNTRIES" />
+            <End Role="LOCATIONS" EntitySet="LOCATIONS" />
+          </AssociationSet>
+          <AssociationSet Name="DEPT_LOC_FK" Association="Self.DEPT_LOC_FK">
+            <End Role="LOCATIONS" EntitySet="LOCATIONS" />
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="DEPT_MGR_FK" Association="Self.DEPT_MGR_FK">
+            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="EMP_DEPT_FK" Association="Self.EMP_DEPT_FK">
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+          </AssociationSet>
+          <AssociationSet Name="JHIST_DEPT_FK" Association="Self.JHIST_DEPT_FK">
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+            <End Role="JOB_HISTORY" EntitySet="JOB_HISTORY" />
+          </AssociationSet>
+          <AssociationSet Name="EMP_JOB_FK" Association="Self.EMP_JOB_FK">
+            <End Role="JOBS" EntitySet="JOBS" />
+            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+          </AssociationSet>
+          <AssociationSet Name="EMP_MANAGER_FK" Association="Self.EMP_MANAGER_FK">
+            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+            <End Role="EMPLOYEES1" EntitySet="EMPLOYEES" />
+          </AssociationSet>
+          <AssociationSet Name="JHIST_EMP_FK" Association="Self.JHIST_EMP_FK">
+            <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+            <End Role="JOB_HISTORY" EntitySet="JOB_HISTORY" />
+          </AssociationSet>
+          <AssociationSet Name="JHIST_JOB_FK" Association="Self.JHIST_JOB_FK">
+            <End Role="JOBS" EntitySet="JOBS" />
+            <End Role="JOB_HISTORY" EntitySet="JOB_HISTORY" />
+          </AssociationSet>
+          <EntitySet Name="CMTs" EntityType="Model.CMT" />
+          <EntitySet Name="COURSEs" EntityType="Model.COURSE" />
+          <EntitySet Name="CUSTOMERs" EntityType="Model.CUSTOMER" />
+          <EntitySet Name="LESSIONs" EntityType="Model.LESSION" />
+          <AssociationSet Name="FK_CMT" Association="Model.FK_CMT">
+            <End Role="LESSION" EntitySet="LESSIONs" />
+            <End Role="CMT" EntitySet="CMTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LESSION" Association="Model.FK_LESSION">
+            <End Role="COURSE" EntitySet="COURSEs" />
+            <End Role="LESSION" EntitySet="LESSIONs" />
+          </AssociationSet>
+          <AssociationSet Name="BOOK_COURCE" Association="Model.BOOK_COURCE">
+            <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+            <End Role="LESSION" EntitySet="LESSIONs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CMT">
+          <Key>
+            <PropertyRef Name="ID_CMT" />
+          </Key>
+          <Property Name="ID_CMT" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_LESS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CMT1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LESSION" Relationship="Model.FK_CMT" FromRole="CMT" ToRole="LESSION" />
+        </EntityType>
+        <EntityType Name="COURSE">
+          <Key>
+            <PropertyRef Name="ID_COURSE" />
+          </Key>
+          <Property Name="ID_COURSE" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LESSIONs" Relationship="Model.FK_LESSION" FromRole="COURSE" ToRole="LESSION" />
+        </EntityType>
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="ID_CUS" />
+          </Key>
+          <Property Name="ID_CUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME_CUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL_CUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE_CUS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_CUS" Type="DateTime" />
+          <Property Name="USER_NAME" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="ROLE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PASSWORD" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LESSIONs" Relationship="Model.BOOK_COURCE" FromRole="CUSTOMER" ToRole="LESSION" />
+        </EntityType>
+        <EntityType Name="LESSION">
+          <Key>
+            <PropertyRef Name="ID_LESSION" />
+          </Key>
+          <Property Name="ID_LESSION" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME_LESSION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LINK_VIDEO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ID_COURSE" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="CMTs" Relationship="Model.FK_CMT" FromRole="LESSION" ToRole="CMT" />
+          <NavigationProperty Name="COURSE" Relationship="Model.FK_LESSION" FromRole="LESSION" ToRole="COURSE" />
+          <NavigationProperty Name="CUSTOMERs" Relationship="Model.BOOK_COURCE" FromRole="LESSION" ToRole="CUSTOMER" />
+        </EntityType>
+        <Association Name="FK_CMT">
+          <End Type="Model.LESSION" Role="LESSION" Multiplicity="0..1" />
+          <End Type="Model.CMT" Role="CMT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LESSION">
+              <PropertyRef Name="ID_LESSION" />
+            </Principal>
+            <Dependent Role="CMT">
+              <PropertyRef Name="ID_LESS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LESSION">
+          <End Type="Model.COURSE" Role="COURSE" Multiplicity="0..1" />
+          <End Type="Model.LESSION" Role="LESSION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COURSE">
+              <PropertyRef Name="ID_COURSE" />
+            </Principal>
+            <Dependent Role="LESSION">
+              <PropertyRef Name="ID_COURSE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BOOK_COURCE">
+          <End Type="Model.CUSTOMER" Role="CUSTOMER" Multiplicity="*" />
+          <End Type="Model.LESSION" Role="LESSION" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="HREntities">
+          <EntitySetMapping Name="COUNTRIES">
+            <EntityTypeMapping TypeName="Model.COUNTRy">
+              <MappingFragment StoreEntitySet="COUNTRIES">
+                <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+                <ScalarProperty Name="COUNTRY_NAME" ColumnName="COUNTRY_NAME" />
+                <ScalarProperty Name="REGION_ID" ColumnName="REGION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEPARTMENTS">
+            <EntityTypeMapping TypeName="Model.DEPARTMENT">
+              <MappingFragment StoreEntitySet="DEPARTMENTS">
+                <ScalarProperty Name="DEPARTMENT_ID" ColumnName="DEPARTMENT_ID" />
+                <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+                <ScalarProperty Name="MANAGER_ID" ColumnName="MANAGER_ID" />
+                <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPLOYEES">
+            <EntityTypeMapping TypeName="Model.EMPLOYEE">
+              <MappingFragment StoreEntitySet="EMPLOYEES">
+                <ScalarProperty Name="EMPLOYEE_ID" ColumnName="EMPLOYEE_ID" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PHONE_NUMBER" ColumnName="PHONE_NUMBER" />
+                <ScalarProperty Name="HIRE_DATE" ColumnName="HIRE_DATE" />
+                <ScalarProperty Name="JOB_ID" ColumnName="JOB_ID" />
+                <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+                <ScalarProperty Name="COMMISSION_PCT" ColumnName="COMMISSION_PCT" />
+                <ScalarProperty Name="MANAGER_ID" ColumnName="MANAGER_ID" />
+                <ScalarProperty Name="DEPARTMENT_ID" ColumnName="DEPARTMENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JOB_HISTORY">
+            <EntityTypeMapping TypeName="Model.JOB_HISTORY">
+              <MappingFragment StoreEntitySet="JOB_HISTORY">
+                <ScalarProperty Name="EMPLOYEE_ID" ColumnName="EMPLOYEE_ID" />
+                <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+                <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+                <ScalarProperty Name="JOB_ID" ColumnName="JOB_ID" />
+                <ScalarProperty Name="DEPARTMENT_ID" ColumnName="DEPARTMENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JOBS">
+            <EntityTypeMapping TypeName="Model.JOB">
+              <MappingFragment StoreEntitySet="JOBS">
+                <ScalarProperty Name="JOB_ID" ColumnName="JOB_ID" />
+                <ScalarProperty Name="JOB_TITLE" ColumnName="JOB_TITLE" />
+                <ScalarProperty Name="MIN_SALARY" ColumnName="MIN_SALARY" />
+                <ScalarProperty Name="MAX_SALARY" ColumnName="MAX_SALARY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOCATIONS">
+            <EntityTypeMapping TypeName="Model.LOCATION">
+              <MappingFragment StoreEntitySet="LOCATIONS">
+                <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+                <ScalarProperty Name="STREET_ADDRESS" ColumnName="STREET_ADDRESS" />
+                <ScalarProperty Name="POSTAL_CODE" ColumnName="POSTAL_CODE" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="STATE_PROVINCE" ColumnName="STATE_PROVINCE" />
+                <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REGIONS">
+            <EntityTypeMapping TypeName="Model.REGION">
+              <MappingFragment StoreEntitySet="REGIONS">
+                <ScalarProperty Name="REGION_ID" ColumnName="REGION_ID" />
+                <ScalarProperty Name="REGION_NAME" ColumnName="REGION_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMTs">
+            <EntityTypeMapping TypeName="Model.CMT">
+              <MappingFragment StoreEntitySet="CMT">
+                <ScalarProperty Name="CMT1" ColumnName="CMT" />
+                <ScalarProperty Name="ID_LESS" ColumnName="ID_LESS" />
+                <ScalarProperty Name="ID_CMT" ColumnName="ID_CMT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COURSEs">
+            <EntityTypeMapping TypeName="Model.COURSE">
+              <MappingFragment StoreEntitySet="COURSE">
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID_COURSE" ColumnName="ID_COURSE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUSTOMERs">
+            <EntityTypeMapping TypeName="Model.CUSTOMER">
+              <MappingFragment StoreEntitySet="CUSTOMER">
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="DATE_CUS" ColumnName="DATE_CUS" />
+                <ScalarProperty Name="PHONE_CUS" ColumnName="PHONE_CUS" />
+                <ScalarProperty Name="EMAIL_CUS" ColumnName="EMAIL_CUS" />
+                <ScalarProperty Name="NAME_CUS" ColumnName="NAME_CUS" />
+                <ScalarProperty Name="ID_CUS" ColumnName="ID_CUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LESSIONs">
+            <EntityTypeMapping TypeName="Model.LESSION">
+              <MappingFragment StoreEntitySet="LESSION">
+                <ScalarProperty Name="ID_COURSE" ColumnName="ID_COURSE" />
+                <ScalarProperty Name="LINK_VIDEO" ColumnName="LINK_VIDEO" />
+                <ScalarProperty Name="NAME_LESSION" ColumnName="NAME_LESSION" />
+                <ScalarProperty Name="ID_LESSION" ColumnName="ID_LESSION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="BOOK_COURCE" TypeName="Model.BOOK_COURCE" StoreEntitySet="BOOK_COURCE">
+            <EndProperty Name="LESSION">
+              <ScalarProperty Name="ID_LESSION" ColumnName="ID_LESSION" />
+            </EndProperty>
+            <EndProperty Name="CUSTOMER">
+              <ScalarProperty Name="ID_CUS" ColumnName="ID_CUS" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
