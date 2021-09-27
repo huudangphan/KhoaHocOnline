@@ -1,0 +1,131 @@
+﻿
+
+@{
+    ViewBag.Title = "HoiSingle";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<section class="page-header services-header" data-parallax="scroll" data-image-src="Assets/images/header/portfolio-folding-img.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Đi một ngày đàng,<br> học một sàng khôn.</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title text-center">
+                    <h2>Hỏi đáp</h2>
+                </div>
+                <div class="protfolio-mixitup-btn text-center">
+                    <button class="filter btn btn-default btn-main active" data-filter="all">Tất cả</button>
+                    <button class="filter btn btn-default btn-main" data-filter="category-1">Nổi bật</button>
+                    <button class="filter btn btn-default btn-main" data-filter="category-2">Chưa trả lời</button>
+                </div>
+                <div id="Container" class="filtr-container row">
+                    <div class="filtr-item col-md-4 col-sm-6 col-xs-12" data-category="category-1">
+                        <div class="portfolio-list">
+                            <a href="@Url.Action("HoiSingle","Home")">
+                                <div class="th-mouse-portfolio-card">
+                                    <div class="thumbnail portfolio-thumbnail">
+                                        <img src="~/Assets/images/portfolio/portfolio-img1.jpg" alt="Portfolio">
+                                        <div class="caption portfolio-caption">
+                                            <p class="date">26/9/2021</p>
+                                            <h3 class="portfolio-title">Tìm hiểu về Business Analyst?</h3>
+                                            <p class="portfolio-subtitle">Phan Minh</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="filtr-item col-md-4 col-sm-6 col-xs-12" data-category="category-2">
+                        <div class="portfolio-list">
+                            <a href="@Url.Action("HoiSingle","Home")">
+                                <div class="th-mouse-portfolio-card">
+                                    <div class="thumbnail portfolio-thumbnail">
+                                        <img src="~/Assets/images/portfolio/portfolio-img2.jpg" alt="Portfolio">
+                                        <div class="caption portfolio-caption">
+                                            <p class="date">10/09/2021</p>
+                                            <h3 class="portfolio-title">CSS Animation</h3>
+                                            <p class="portfolio-subtitle">Nguyễn Đức</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="filtr-item col-md-4 col-sm-6 col-xs-12" data-category="category-3">
+                        <div class="portfolio-list">
+                            <a href="@Url.Action("HoiSingle","Home")">
+                                <div class="th-mouse-portfolio-card">
+                                    <div class="thumbnail portfolio-thumbnail">
+                                        <img src="~/Assets/images/portfolio/portfolio-img3.jpg" alt="Portfolio">
+                                        <div class="caption portfolio-caption">
+                                            <p class="date">10/09/2021</p>
+                                            <h3 class="portfolio-title">Lộ trình học font-end</h3>
+                                            <p class="portfolio-subtitle">Nguyễn Huy</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="filtr-item col-md-4 col-sm-6 col-xs-12" data-category="category-1">
+                        <div class="portfolio-list">
+                            <a href="@Url.Action("HoiSingle","Home")">
+                                <div class="th-mouse-portfolio-card">
+                                    <div class="thumbnail portfolio-thumbnail">
+                                        <img src="~/Assets/images/portfolio/portfolio-img4.jpg" alt="Portfolio">
+                                        <div class="caption portfolio-caption">
+                                            <p class="date">20/10/2021</p>
+                                            <h3 class="portfolio-title">Kích hoạt khóa học ở đâu ạ?</h3>
+                                            <p class="portfolio-subtitle">Kỳ Duyên</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="filtr-item col-md-4 col-sm-6 col-xs-12" data-category="category-2">
+                        <div class="portfolio-list">
+                            <a href="@Url.Action("HoiSingle","Home")">
+                                <div class="th-mouse-portfolio-card">
+                                    <div class="thumbnail portfolio-thumbnail">
+                                        <img src="~/Assets/images/portfolio/portfolio-img5.jpg" alt="Portfolio">
+                                        <div class="caption portfolio-caption">
+                                            <p class="date">18/10/2021</p>
+                                            <h3 class="portfolio-title">Lỗi không in được kết quả ạ?</h3>
+                                            <p class="portfolio-subtitle">Đình Nhật</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="filtr-item col-md-4 col-sm-6 col-xs-12" data-category="category-3">
+                        <div class="portfolio-list">
+                            <a href="@Url.Action("HoiSingle","Home")">
+                                <div class="th-mouse-portfolio-card">
+                                    <div class="thumbnail portfolio-thumbnail">
+                                        <img src="~/Assets/images/portfolio/portfolio-img6.jpg" alt="Portfolio">
+                                        <div class="caption portfolio-caption">
+                                            <p class="date">10/10/2021</p>
+                                            <h3 class="portfolio-title">F có dự định quay khóa PHP không?</h3>
+                                            <p class="portfolio-subtitle">Lê Nam</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

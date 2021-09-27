@@ -1,31 +1,205 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="hero-slider">
+    <div class="slider-item th-fullpage hero-area" style="background-image: url(Assets/images/slider/bg-2.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">A winner never<br>stops trying</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider-item th-fullpage hero-area" style="background-image: url(Assets/images/slider/bg-3.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">Thành quả của học viên</h1>
+                    <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">
+                        Để đạt được kết quả tốt trong mọi việc ta cần xác định mục tiêu rõ ràng cho việc đó <br>
+                        học online cũng không phải ngoại lệ.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider-item th-fullpage hero-area" style="background-image: url(Assets/images/slider/bg-1.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">F Trên Youtube</h1>
+                    <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">
+                        F được nhắc tới ở mọi nơi, ở đâu có cơ hội việc làm <br> F sẽ có ở đó
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<div>
+    <section class="case-study">
+        <div class="text-center">
+            <h2 class="title">Video nổi bật</h2>
+        </div>
+        <!-- Case Study Description
+        top section -->
+        <div class="case-study-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- inner sub-title -->
+                        <div class="content">
+                            <h4 class="inner-title">Phương pháp và quan điểm học lập trình</h4>
+                            <p class="case-description">Bạn cần có mục tiêu cho việc làm của mình, học lập trình cũng vậy, từ đó bạn sẽ lên được lộ trình học lập trình và phương pháp học lập trình phù hợp với bản thân hơn. Nếu không có mục tiêu thì bạn sẽ không thể tìm ra được lộ trình học lập trình đâu ..</p>
+                            <p>
+                                Phần lớn các bạn đều mong muốn học lập trình để đi làm và kiếm nhiều tiền nên mỗi lúc có thời gian hãy tự chủ động học và suy nghĩ về nó nhé. Bây giờ lớn rồi! Đừng để ai phải nhắc cho tương lai của chính mình nhé!
+                            </p>
+                            <!-- View More Details -->
+                            <a class="btn btn-default btn-main" href="#" role="button">Xem thêm</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="img-content">
+                            <img class="img-responsive" src="~/Assets/images/case-study/case-study-2.png" alt="" style="height:200px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Case Study Description
+        bottom section -->
+        <div class="case-study-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="img-content">
+                            <img class="img-responsive" src="~/Assets/images/case-study/case-study-1.png" alt="" style="height:200px;">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- inner sub-title -->
+                        <div class="content">
+                            <h4 class="inner-title">Chọn ngành IT có sai lầm? Những trải nghiệm thực tế sau 2 tháng làm việc tại doanh nghiệp?</h4>
+                            <p class="case-description">Môi trường đi làm công ty IT như thế nào? Trải nghiệm môi trường công ty IT trong thực tế? Lựa chọn ngành IT có đúng đắn? v.v và rất nhiều câu hỏi khác sẽ được chia sẻ trong nội dung video này.</p>
+                            <p>
+                                Các thành viên tham gia chia sẻ đều là những sinh viên (năm 2-3, một vài bạn năm cuối) đã đi làm thực tế, đây là video sau 2 tháng các bạn đi làm, các bạn vừa lên thử việc
+                            </p>
+                            <!-- View More Details -->
+                            <a class="btn btn-default btn-main" href="#" role="button">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    </section>
+
+    <section class="clients" data-parallax="scroll" data-image-src="~/Assets/images/slider/bg-3.jpg">
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title text-center">
+                            <h2>Cảm nhận học viên</h2>
+                        </div>
+                        <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0 slider-main">
+                            <div class="testimonial-slider">
+                                <div class="item">
+                                    <!-- Slider item -->
+                                    <!-- <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 padding-0"> -->
+                                    <div class="testimonials-area">
+                                        <!-- <div class="round-shape"></div> -->
+                                        <p class="testimonials-description">
+                                            Với hơn 5 tháng đồng hành cùng khóa học điều em tâm đắc nhất
+                                            chính là giá trị mà các thầy cô dành cho học viên trong những
+                                            bài giảng. Giá trị đó, đối với em không những nằm ờ phần nội
+                                            dung bài học, mà còn nằm ở động lực và cảm hứng mà thầy cô
+                                            truyền lại cho học viên. Động lực cho một tinh thần tự chủ
+                                            cả về kiến thức chuyên môn và định hướng về sự nghiệp của
+                                            bản thân, cảm hứng về những câu chuyện, những chia sẻ có thật
+                                            và hết sức chân tình xuất phát từ cái Tâm của người thầy.
+                                        </p>
+                                        <div class="author">
+                                            <img src="~/Assets/images/clients-img1.png" alt="Clients">
+                                            <h3 class="author-name">Phạm Đinh Minh Triệu</h3>
+                                            <span class="designation"></span>
+                                        </div>
+                                    </div>
+                                    <!-- </div> -->
+                                    <!-- End Slider item -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.End row -->
+            </div>
+        </div>
+    </section>
+
+    <section class="clients-logo" data-parallax="scroll" data-image-src="~/Assets/images/slider/bg-1.jpg">
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="title text-center">
+                        <h2>Khóa học</h2>
+                    </div>
+                    <div class="col-md-4 block text-center">
+                        <img src="~/Assets/images/course/cour1.png" alt="Client Logo">
+                    </div>
+                    <div class="col-md-4 block text-center">
+                        <img src="~/Assets/images/course/cour2.png" alt="Client Logo">
+                    </div>
+                    <div class="col-md-4 block text-center">
+                        <img src="~/Assets/images/course/cour3.png" alt="Client Logo">
+                    </div>
+
+                    <div class="col-md-4 block text-center">
+                        <img src="~/Assets/images/course/cour4.png" alt="Client Logo">
+                    </div>
+                    <div class="col-md-4 block text-center">
+                        <img src="~/Assets/images/course/cour5.png" alt="Client Logo">
+                    </div>
+                    <div class="col-md-4 block text-center">
+                        <img src="~/Assets/images/course/cour6.png" alt="Client Logo">
+                    </div>
+                </div><!-- /.End row -->
+            </div>
+        </div>
+    </section>
+
+    <section class="clients-logo" data-parallax="scroll" data-image-src="~/Assets/images/slider/bg-1.jpg">
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="title text-center">
+                        <h2>Bài viết nổi bật</h2>
+                    </div>
+                    <div class="col-md-4 block text-center">
+                        <img src="~/Assets/images/course/bv_hot1.png" alt="Client Logo">
+                    </div>
+                    <div class="col-md-4 block text-center">
+                        <img src="~/Assets/images/course/bv_hot2.png" alt="Client Logo">
+                    </div>
+                    <div class="col-md-4 block text-center">
+                        <img src="~/Assets/images/course/bv_hot3.png" alt="Client Logo">
+                    </div>
+
+                    <div class="col-md-4 block text-center">
+                        <img src="~/Assets/images/course/bv_hot4.png" alt="Client Logo">
+                    </div>
+                    <div class="col-md-4 block text-center">
+                        <img src="~/Assets/images/course/bv_hot5.png" alt="Client Logo">
+                    </div>
+                    <div class="col-md-4 block text-center">
+                        <img src="~/Assets/images/course/bv_hot6.png" alt="Client Logo">
+                    </div>
+                </div><!-- /.End row -->
+            </div>
+        </div>
+    </section>
+
+
