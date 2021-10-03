@@ -29,10 +29,7 @@
         <AssociationConnector Association="Model.FK_CMT" />
         <AssociationConnector Association="Model.FK_LESSION" />
         <AssociationConnector Association="Model.BOOK_COURCE" />
-        <AssociationConnector Association="Model.FK_CMT" />
-        <AssociationConnector Association="Model.FK_LESSION" />
-        <AssociationConnector Association="Model.BOOK_COURCE" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

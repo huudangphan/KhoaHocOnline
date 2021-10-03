@@ -90,6 +90,7 @@
     <EntitySetMapping Name="COURSEs">
       <EntityTypeMapping TypeName="Model.COURSE">
         <MappingFragment StoreEntitySet="COURSE">
+          <ScalarProperty Name="IMG" ColumnName="IMG" />
           <ScalarProperty Name="NAME" ColumnName="NAME" />
           <ScalarProperty Name="ID_COURSE" ColumnName="ID_COURSE" />
         </MappingFragment>
