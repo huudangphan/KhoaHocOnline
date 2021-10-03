@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<WebApplication2.Models.COURSE>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
@@ -147,25 +148,34 @@
                     <div class="title text-center">
                         <h2>Khóa học</h2>
                     </div>
-                    <div class="col-md-4 block text-center">
-                        <img src="~/Assets/images/course/cour1.png" alt="Client Logo">
-                    </div>
-                    <div class="col-md-4 block text-center">
-                        <img src="~/Assets/images/course/cour2.png" alt="Client Logo">
-                    </div>
-                    <div class="col-md-4 block text-center">
-                        <img src="~/Assets/images/course/cour3.png" alt="Client Logo">
-                    </div>
+                    @foreach (var item in Model)
+                    {
+                        <a href="#">
+                            <div class="col-md-4 block text-center">
+                                <img src="~/Assets/images/course/@Html.DisplayFor(modelItem=>item.IMG)" alt="Client Logo">
+                            </div>
+                        </a>
 
-                    <div class="col-md-4 block text-center">
-                        <img src="~/Assets/images/course/cour4.png" alt="Client Logo">
-                    </div>
-                    <div class="col-md-4 block text-center">
-                        <img src="~/Assets/images/course/cour5.png" alt="Client Logo">
-                    </div>
-                    <div class="col-md-4 block text-center">
-                        <img src="~/Assets/images/course/cour6.png" alt="Client Logo">
-                    </div>
+                    }
+                    @*<div class="col-md-4 block text-center">
+                            <img src="~/Assets/images/course/cour1.png" alt="Client Logo">
+                        </div>
+                        <div class="col-md-4 block text-center">
+                            <img src="~/Assets/images/course/cour2.png" alt="Client Logo">
+                        </div>
+                        <div class="col-md-4 block text-center">
+                            <img src="~/Assets/images/course/cour3.png" alt="Client Logo">
+                        </div>
+
+                        <div class="col-md-4 block text-center">
+                            <img src="~/Assets/images/course/cour4.png" alt="Client Logo">
+                        </div>
+                        <div class="col-md-4 block text-center">
+                            <img src="~/Assets/images/course/cour5.png" alt="Client Logo">
+                        </div>
+                        <div class="col-md-4 block text-center">
+                            <img src="~/Assets/images/course/cour6.png" alt="Client Logo">
+                        </div>*@
                 </div><!-- /.End row -->
             </div>
         </div>
@@ -201,5 +211,6 @@
             </div>
         </div>
     </section>
+
 
 

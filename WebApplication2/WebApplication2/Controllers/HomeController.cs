@@ -35,22 +35,20 @@ namespace WebApplication2.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+            
+            return View(db.COURSEs.ToList());
         }
-
-        public ActionResult About()
+        public ActionResult DetailCourse()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return View(db.LESSIONs.SingleOrDefault(x => x.ID_COURSE == 7&&x.ID_LESSION==2));
         }
-
-        public ActionResult Contact()
+        public ActionResult ListLession()
         {
-            ViewBag.Message = "Your contact page.";
+            return PartialView(db.LESSIONs.Where(x=>x.ID_COURSE==7).ToList());
 
-            return View();
         }
+        
+      
         public PartialViewResult KhoaDangHoc()
         {
             return PartialView();
