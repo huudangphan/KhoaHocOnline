@@ -1,0 +1,32 @@
+﻿@model WebApplication2.Models.LESSION
+
+@{
+    ViewBag.Title = "DetailCourse";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+<br /> <br /><br /><br /><br /><br /><br /><br />
+<table class="table">
+    <tr>
+        <td>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="col-md-4">
+                @{
+                    Html.RenderAction("ListLession", "Home");
+                }
+               
+            </div>
+            <div class="col-md-8">
+                <iframe width="700" height="450" src=@Html.DisplayFor(modelItem => modelItem.LINK_VIDEO) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </td>
+    </tr>
+    
+
+
+</table>

@@ -21,6 +21,7 @@ namespace WebApplication2.Models
     
         public decimal ID_COURSE { get; set; }
         public string NAME { get; set; }
+        public string IMG { get; set; }
     
         public virtual ICollection<LESSION> LESSIONs { get; set; }
     }

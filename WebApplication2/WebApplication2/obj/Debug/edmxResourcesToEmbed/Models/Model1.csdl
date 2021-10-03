@@ -292,6 +292,7 @@
     <Property Name="ID_COURSE" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="LESSIONs" Relationship="Model.FK_LESSION" FromRole="COURSE" ToRole="LESSION" />
+    <Property Name="IMG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="CUSTOMER">
     <Key>

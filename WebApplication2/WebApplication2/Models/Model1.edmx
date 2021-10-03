@@ -35,6 +35,7 @@
           </Key>
           <Property Name="ID_COURSE" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NAME" Type="varchar2" MaxLength="50" />
+          <Property Name="IMG" Type="varchar2" MaxLength="100" />
         </EntityType>
         <EntityType Name="CUSTOMER">
           <Key>
@@ -655,6 +656,7 @@
           <Property Name="ID_COURSE" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="LESSIONs" Relationship="Model.FK_LESSION" FromRole="COURSE" ToRole="LESSION" />
+          <Property Name="IMG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="CUSTOMER">
           <Key>
@@ -805,6 +807,7 @@
           <EntitySetMapping Name="COURSEs">
             <EntityTypeMapping TypeName="Model.COURSE">
               <MappingFragment StoreEntitySet="COURSE">
+                <ScalarProperty Name="IMG" ColumnName="IMG" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
                 <ScalarProperty Name="ID_COURSE" ColumnName="ID_COURSE" />
               </MappingFragment>
