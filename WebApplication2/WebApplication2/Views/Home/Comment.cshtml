@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebApplication2.Models.CMT>
+
+<div class="row">
+    @using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <td>@Html.TextBox("comment")</td>
+                <td><button type="submit" class="btn btn-secondary">Bình luận</button></td>
+            </tr>
+        </table>
+
+    }
+
+</div>
+
+<table class="table">
+   
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            <p style="color:black"> @Html.DisplayFor(modelItem => item.CMT1)</p>
+           
+        </td>
+       
+    </tr>
+}
+
+</table>
