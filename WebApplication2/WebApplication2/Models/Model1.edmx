@@ -48,7 +48,7 @@
           <Property Name="DATE_CUS" Type="date" />
           <Property Name="USER_NAME" Type="varchar2" MaxLength="16" />
           <Property Name="ROLE" Type="number" Precision="38" Scale="0" />
-          <Property Name="PASSWORD" Type="varchar2" MaxLength="32" />
+          <Property Name="PASSWORD" Type="varchar2" MaxLength="200" />
         </EntityType>
         <EntityType Name="DEPARTMENTS">
           <Key>

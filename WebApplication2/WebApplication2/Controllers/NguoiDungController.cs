@@ -22,16 +22,25 @@ namespace WebApplication2.Controllers
         [HttpPost]
         public ActionResult Dangky(NguoiDungModel model)
         {
-            var cus = new CUSTOMER();
-            cus.NAME_CUS = model.name;
-            cus.PHONE_CUS = model.phone;
-            cus.EMAIL_CUS = model.email;
-            cus.DATE_CUS = model.date;
-            cus.USER_NAME = model.username;
-            cus.PASSWORD = model.password;
-            cus.ROLE = 1;
-            db.CUSTOMERs.Add(cus);
-            db.SaveChanges();
+            try
+            {
+                var cus = new CUSTOMER();
+                cus.NAME_CUS = model.name;
+                cus.PHONE_CUS = model.phone;
+                cus.EMAIL_CUS = model.email;
+                cus.DATE_CUS = model.date;
+                cus.USER_NAME = model.username;
+                cus.PASSWORD = Globaldata.EnryptString(model.password);
+                cus.ROLE = 1;
+                db.CUSTOMERs.Add(cus);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                string error = ex.ToString();
+            }
+            
             return View();
         }
 

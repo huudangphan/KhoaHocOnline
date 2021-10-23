@@ -38,13 +38,15 @@ namespace WebApplication2.Controllers
             
             return View(db.COURSEs.ToList());
         }
-        public ActionResult DetailCourse()
+        public ActionResult DetailCourse(int id_course)
         {
-            return View(db.LESSIONs.SingleOrDefault(x => x.ID_COURSE == 7&&x.ID_LESSION==2));
+            Globaldata.idCources = id_course;
+            Globaldata.id_lession = Int32.Parse((from i in db.LESSIONs where i.ID_COURSE==id_course select i.ID_LESSION).FirstOrDefault().ToString());
+            return View(db.LESSIONs.FirstOrDefault(x => x.ID_COURSE == id_course));
         }
         public ActionResult ListLession()
         {
-            return PartialView(db.LESSIONs.Where(x=>x.ID_COURSE==7).ToList());
+            return PartialView(db.LESSIONs.Where(x=>x.ID_COURSE==Globaldata.idCources).ToList());
 
         }
         
@@ -80,6 +82,26 @@ namespace WebApplication2.Controllers
         public ActionResult HoiSingle()
         {
             return View();
+        }
+        [HttpGet]
+        public PartialViewResult Comment(int id_lession=0)
+        {
+            if(id_lession==0)
+            {
+                id_lession = Globaldata.id_lession;
+            }
+            return PartialView(db.CMTs.Where(x => x.ID_LESS == id_lession).ToList());
+
+        }
+        [HttpPost]
+        public PartialViewResult Comment(string comment)
+        {
+            var cmt = new CMT();
+            cmt.ID_LESS = Globaldata.id_lession;
+            cmt.CMT1 = comment;
+            db.CMTs.Add(cmt);
+            db.SaveChanges();
+            return PartialView(db.CMTs.Where(x => x.ID_LESS == Globaldata.id_lession).ToList());
         }
     }
 }

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<WebApplication2.Models.COURSE>
+
+@{
+    ViewBag.Title = "ListKhoaHoc";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+
+
+
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("DetailCourse","Home",new { @id_course=item.ID_COURSE})">
+            <div class="col-md-4 block text-center">
+                <img src="~/Assets/images/course/@Html.DisplayFor(modelItem=>item.IMG)" alt="Client Logo">
+            </div>
+        </a>
+
+    }
+</div>
