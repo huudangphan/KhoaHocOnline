@@ -198,8 +198,8 @@ D:\DoAn\WebApplication2\WebApplication2\bin\System.Web.WebPages.Razor.xml
 D:\DoAn\WebApplication2\WebApplication2\bin\Newtonsoft.Json.xml
 D:\DoAn\WebApplication2\WebApplication2\bin\Antlr3.Runtime.pdb
 D:\DoAn\WebApplication2\WebApplication2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\DoAn\WebApplication2\WebApplication2\obj\Debug\KhoaHocOnline.csproj.AssemblyReference.cache
 D:\DoAn\WebApplication2\WebApplication2\obj\Debug\KhoaHocOnline.csproj.CoreCompileInputs.cache
 D:\DoAn\WebApplication2\WebApplication2\obj\Debug\KhoaHocOnline.csproj.CopyComplete
 D:\DoAn\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 D:\DoAn\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+D:\DoAn\WebApplication2\WebApplication2\obj\Debug\KhoaHocOnline.csproj.AssemblyReference.cache
