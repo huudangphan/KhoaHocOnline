@@ -18,5 +18,10 @@ namespace WebApplication2.Controllers
         {
             return View(db.COURSEs.ToList());
         }
+        [HttpGet]
+        public ActionResult AddKhoaHoc()
+        {
+            return View(db.COURSEs.ToList());
+        }
     }
 }
