@@ -2,23 +2,33 @@
 
 @{
     ViewBag.Title = "ListKhoaHoc";
-    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-
-
-
-
-
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 <div class="row">
+    <div class="col-8">
+        <div class="row">
 
-    @foreach (var item in Model)
-    {
-        <a href="@Url.Action("DetailCourse","Home",new { @id_course=item.ID_COURSE})">
-            <div class="col-md-4 block text-center">
-                <img src="~/Assets/images/course/@Html.DisplayFor(modelItem=>item.IMG)" alt="Client Logo">
-            </div>
-        </a>
+            @foreach (var item in Model)
+            {
+                <a href="@Url.Action("DetailCourse","Admin",new { @id_course=item.ID_COURSE})">
+                    <div class="col-md-4" >
+                        <img src="~/Assets/images/course/@Html.DisplayFor(modelItem=>item.IMG)" alt="Client Logo">
+                    </div>
+                </a>
 
-    }
+            }
+        </div>
+    </div>
+    <div class="col-2">
+
+    </div>
 </div>
+
+

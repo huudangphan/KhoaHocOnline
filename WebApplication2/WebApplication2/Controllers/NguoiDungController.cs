@@ -43,6 +43,45 @@ namespace WebApplication2.Controllers
             
             return View();
         }
+        [HttpGet]
+        public ActionResult DangNhap()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult DangNhap(CUSTOMER cus)
+        {
+            if(cus.USER_NAME==null||cus.PASSWORD==null)
+            {
+                ViewBag.Error = "Tài khoản và mật khẩu không thể để trống!";
+            }
+            else
+            {
+                try
+                {
+                    string pass = Globaldata.EnryptString(cus.PASSWORD);
+                    var result = db.CUSTOMERs.Where(x => x.USER_NAME == cus.USER_NAME && x.PASSWORD == pass).SingleOrDefault();
+                    if (result == null)
+                    {
+                        ViewBag.Error = "Tài khoản hoặc mật khẩu sai";
+                        return View();
+                    }
+                    string type = result.ROLE.ToString();
+                    Globaldata.name = result.NAME_CUS;
+                    
+                    if (type == "1")
+                        return RedirectToAction("Index", "Home");
+                    return RedirectToAction("ListKhoaHoc", "Admin");
+
+                }
+                catch (Exception ex)
+                {
+                    string err = ex.ToString();
+                    ViewBag.Error = "Xảy ra lỗi, vui lòng thử lại sau!";
+                }
+            }
+            return View();
+        }
 
 
     }
