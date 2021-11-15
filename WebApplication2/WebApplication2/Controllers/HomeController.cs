@@ -53,5 +53,38 @@ namespace WebApplication2.Controllers
             db.SaveChanges();
             return PartialView(db.CMTs.Where(x => x.ID_LESS == Globaldata.id_lession).ToList());
         }
+        public ActionResult Book()
+        {
+            try
+            {
+                if (Globaldata.user_name== null)
+                {
+                    ViewBag.error = "Vui lòng đăng nhập để đánh dấu bài giảng";
+                    return View();
+                }
+                var check = db.BOOKs.Where(x => x.ID_CUS == Globaldata.id_cuss && x.ID_LESSION == Globaldata.id_lession).SingleOrDefault();
+                if(check!=null)
+                {
+                    db.BOOKs.Remove(check);
+                    db.SaveChanges();
+                    ViewBag.error = " Xoá đánh dấu bài giảng thành công";
+                    return View();
+                }
+                var book = new BOOK();
+                book.ID_CUS = Globaldata.id_cuss;
+                book.ID_LESSION = Globaldata.id_lession;
+                book.ID_COURCE = Globaldata.idCources;
+                db.BOOKs.Add(book);
+                db.SaveChanges();
+                ViewBag.error = "Đánh dấu bài giảng thành công";
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.error = "Xảy ra lỗi, vui lòng thử lại sau";
+                return View();
+            }
+           
+        }
     }
 }

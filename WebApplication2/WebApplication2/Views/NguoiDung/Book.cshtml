@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebApplication2.Models.LESSION>
+
+@{
+    ViewBag.Title = "Book";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h2>Book</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+       
+        <th>Bài giảng</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME_LESSION)
+        </td>
+        
+        <td>
+           
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

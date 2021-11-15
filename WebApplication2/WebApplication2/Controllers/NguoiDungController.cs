@@ -68,7 +68,8 @@ namespace WebApplication2.Controllers
                     }
                     string type = result.ROLE.ToString();
                     Globaldata.name = result.NAME_CUS;
-                    
+                    Globaldata.user_name = result.USER_NAME;
+                    Globaldata.id_cuss = (int)result.ID_CUS;
                     if (type == "1")
                         return RedirectToAction("Index", "Home");
                     return RedirectToAction("ListKhoaHoc", "Admin");
@@ -81,6 +82,11 @@ namespace WebApplication2.Controllers
                 }
             }
             return View();
+        }
+        public ActionResult Book()
+        {
+            var result = (from a in db.BOOKs join b in db.LESSIONs on a.ID_LESSION equals b.ID_LESSION where a.ID_CUS == Globaldata.id_cuss select b.NAME_LESSION).ToList();
+            return View(result);
         }
 
 

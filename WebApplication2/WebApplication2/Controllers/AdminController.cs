@@ -73,7 +73,8 @@ namespace WebApplication2.Controllers
         }
         public ActionResult Detail(int id)
         {
-            return View();
+
+            return View(db.CMTs.Where(x=>x.ID_LESS==id));
         }
     }
 }

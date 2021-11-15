@@ -29,6 +29,7 @@
         <AssociationConnector Association="Model.FK_CMT" />
         <AssociationConnector Association="Model.FK_LESSION" />
         <AssociationConnector Association="Model.BOOK_COURCE" />
+        <EntityTypeShape EntityType="Model.BOOK" Width="1.5" PointX="7.375" PointY="9.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

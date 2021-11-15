@@ -13,6 +13,7 @@ namespace WebApplication2
         public static int id_lession { get; set; }
         public static string user_name { get; set; }
         public static string name { get; set; }
+        public static int id_cuss { get; set; }
         public static string DecryptString(string encrString)
         {
             byte[] b;

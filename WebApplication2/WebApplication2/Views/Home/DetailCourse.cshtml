@@ -23,7 +23,9 @@
             </div>
             <div class="col-md-8">
                 <iframe width="700" height="450" src=@Html.DisplayFor(modelItem => modelItem.LINK_VIDEO) frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>ABC</p>
+                <button>
+                    @Html.ActionLink("Đánh dấu", "Book");
+                </button>
             </div>
            
         </td>

@@ -275,6 +275,7 @@
       <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
       <End Role="LESSION" EntitySet="LESSIONs" />
     </AssociationSet>
+    <EntitySet Name="BOOKs" EntityType="Model.BOOK" />
   </EntityContainer>
   <EntityType Name="CMT">
     <Key>
@@ -348,4 +349,13 @@
     <End Type="Model.CUSTOMER" Role="CUSTOMER" Multiplicity="*" />
     <End Type="Model.LESSION" Role="LESSION" Multiplicity="*" />
   </Association>
+  <EntityType Name="BOOK">
+    <Key>
+      <PropertyRef Name="ID_CUS" />
+      <PropertyRef Name="ID_LESSION" />
+    </Key>
+    <Property Name="ID_CUS" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ID_LESSION" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ID_COURCE" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
 </Schema>

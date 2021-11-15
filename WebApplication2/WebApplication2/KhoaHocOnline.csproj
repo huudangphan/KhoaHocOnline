@@ -176,6 +176,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Globaldata.cs" />
+    <Compile Include="Models\BOOK.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CMT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -1794,6 +1797,9 @@
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Admin\Them.cshtml" />
     <Content Include="Views\NguoiDung\DangNhap.cshtml" />
+    <Content Include="Views\Admin\Detail.cshtml" />
+    <Content Include="Views\NguoiDung\Book.cshtml" />
+    <Content Include="Views\Home\Book.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

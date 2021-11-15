@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="18.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BOOK">
+    <Key>
+      <PropertyRef Name="ID_CUS" />
+      <PropertyRef Name="ID_LESSION" />
+    </Key>
+    <Property Name="ID_CUS" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_LESSION" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_COURCE" Type="number" Precision="38" Scale="0" />
+  </EntityType>
   <EntityType Name="BOOK_COURCE">
     <Key>
       <PropertyRef Name="ID_CUS" />
@@ -286,6 +295,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="BOOK" EntityType="Self.BOOK" Schema="HR" store:Type="Tables" />
     <EntitySet Name="BOOK_COURCE" EntityType="Self.BOOK_COURCE" Schema="HR" store:Type="Tables" />
     <EntitySet Name="CMT" EntityType="Self.CMT" Schema="HR" store:Type="Tables" />
     <EntitySet Name="COUNTRIES" EntityType="Self.COUNTRIES" Schema="HR" store:Type="Tables" />

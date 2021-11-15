@@ -128,5 +128,14 @@
         <ScalarProperty Name="ID_CUS" ColumnName="ID_CUS" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="BOOKs">
+      <EntityTypeMapping TypeName="Model.BOOK">
+        <MappingFragment StoreEntitySet="BOOK">
+          <ScalarProperty Name="ID_COURCE" ColumnName="ID_COURCE" />
+          <ScalarProperty Name="ID_LESSION" ColumnName="ID_LESSION" />
+          <ScalarProperty Name="ID_CUS" ColumnName="ID_CUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

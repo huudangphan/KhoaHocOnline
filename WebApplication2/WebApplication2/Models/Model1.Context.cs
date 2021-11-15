@@ -36,5 +36,6 @@ namespace WebApplication2.Models
         public DbSet<COURSE> COURSEs { get; set; }
         public DbSet<CUSTOMER> CUSTOMERs { get; set; }
         public DbSet<LESSION> LESSIONs { get; set; }
+        public DbSet<BOOK> BOOKs { get; set; }
     }
 }

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebApplication2.Models.CMT>
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br /><br /><br /><br /><br /><br /><br />
+<table class="table">
+    <tr>
+        
+        <th>
+            Nhận xét
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.CMT1)
+        </td>
+       
+    </tr>
+}
+
+</table>
