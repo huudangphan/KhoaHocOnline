@@ -202,3 +202,4 @@ D:\DoAn\WebApplication2\WebApplication2\obj\Debug\KhoaHocOnline.csproj.CoreCompi
 D:\DoAn\WebApplication2\WebApplication2\obj\Debug\KhoaHocOnline.csproj.CopyComplete
 D:\DoAn\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 D:\DoAn\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+D:\DoAn\WebApplication2\WebApplication2\obj\Debug\KhoaHocOnline.csproj.AssemblyReference.cache

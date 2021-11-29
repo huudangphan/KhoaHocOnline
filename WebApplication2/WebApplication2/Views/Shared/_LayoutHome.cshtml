@@ -87,9 +87,9 @@
                         <button class="btn btn-primary" id="btnNavbarSearch" type="button" style="background-color:navajowhite"><i class="fas fa-search"></i></button>
                     </li>
                     <li><a href="@Url.Action("Index","Home")">Home</a></li>
-                    <li><a href="@Url.Action("Hoc","Home")">Học</a></li>
+                    @*<li><a href="@Url.Action("Hoc","Home")">Học</a></li>
                     <li><a href="@Url.Action("Hoi","Home")">Hỏi</a></li>
-                    <li><a href="@Url.Action("Blog","Home")">Blog</a></li>
+                    <li><a href="@Url.Action("Blog","Home")">Blog</a></li>*@
 
                     <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -98,11 +98,21 @@
                         </a>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:black">
-                            <li> <a class="dropdown-item" href="#!">Viết Blog</a></li>
-                            <li><a class="dropdown-item" href="#!">Bài viết của tôi</a></li>
+
+                            @*<li><a class="dropdown-item" href="#!">Bài viết của tôi</a></li>*@
                             <li><hr class="dropdown-divider" /></li>
-                            <li> <a class="dropdown-item" href="#!">Log in</a></li>
-                            <li> <a class="dropdown-item" href="#!">Log out</a></li>
+                            @if (Globaldata.user_name == null)
+                            {
+                                <li> <a class="dropdown-item" href="@Url.Action("DangNhap","NguoiDung")">Log in</a></li>
+                            }
+                            else
+                            {
+                                <li> <a class="dropdown-item" href="@Url.Action("TaiKhoan","NguoiDung")">Tài khoản</a></li>
+                                <li>Xin chào:@Globaldata.name  </li>
+                                <li> <a class="dropdown-item" href="@Url.Action("DangNhap","NguoiDung")">Log out</a></li>
+                            }
+
+
                         </ul>
                     </li>
                 </ul>

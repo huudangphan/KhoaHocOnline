@@ -150,7 +150,7 @@
                     </div>
                     @foreach (var item in Model)
                     {
-                        <a href="@Url.Action("DetailCourse","Home",new { @id_course=item.ID_COURSE})">
+                        <a href="@Url.Action("DetailCourse","Home",new { @id_course=item.ID_COURSE,@id_lession=0})">
                             <div class="col-md-4 block text-center">
                                 <img src="~/Assets/images/course/@Html.DisplayFor(modelItem=>item.IMG)" alt="Client Logo">
                             </div>

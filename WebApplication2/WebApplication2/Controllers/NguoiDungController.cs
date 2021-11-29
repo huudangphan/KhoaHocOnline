@@ -88,6 +88,17 @@ namespace WebApplication2.Controllers
             var result = (from a in db.BOOKs join b in db.LESSIONs on a.ID_LESSION equals b.ID_LESSION where a.ID_CUS == Globaldata.id_cuss select b.NAME_LESSION).ToList();
             return View(result);
         }
+        [HttpGet]
+        public ActionResult TaiKhoan()
+        {
+            var result = (from a in db.BOOKs join b in db.LESSIONs on a.ID_LESSION equals b.ID_LESSION where a.ID_CUS==Globaldata.id_cuss select b).ToList();
+            return View(result);
+        }
+        [HttpPost]
+        public ActionResult TaiKhoan(CUSTOMER c)
+        {
+            return View();
+        }
 
 
     }

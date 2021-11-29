@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebApplication2.Models.LESSION>
+
+@{
+    ViewBag.Title = "TaiKhoan";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<br /><br /><br /><br /><br /><br /><br />
+<h2>Bài giảng đã được đánh dấu</h2>
+<table class="table">
+    <tr>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            <a href="@Url.Action("DetailCourse","Home",new { @id_course=item.ID_COURSE,@id_lession=item.ID_LESSION})">
+                @Html.DisplayFor(modelItem => item.NAME_LESSION)
+            </a>
+           
+        </td>
+        <td>
+            <a><i class="fas fa-trash-alt"></i></a>
+        </td>
+        
+        
+    </tr>
+}
+
+</table>

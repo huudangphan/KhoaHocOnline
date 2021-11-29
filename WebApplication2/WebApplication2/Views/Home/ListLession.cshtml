@@ -13,8 +13,11 @@
     <tr style="background-color:black; ">
       
         <td class="td_hover">
-            <p style="color:white">@Html.DisplayFor(modelItem => item.NAME_LESSION)</p>
-            
+            <a href="@Url.Action("DetailCourse","Home",new { @id_course=item.ID_COURSE,@id_lession=item.ID_LESSION})">
+                <p style="color:white">@Html.DisplayFor(modelItem => item.NAME_LESSION)</p>
+            </a>
+           
+           
         </td>
         
         

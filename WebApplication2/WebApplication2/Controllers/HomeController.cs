@@ -20,11 +20,18 @@ namespace WebApplication2.Controllers
             
             return View(db.COURSEs.ToList());
         }
-        public ActionResult DetailCourse(int id_course)
+        public ActionResult DetailCourse(int id_course,int id_lession )
         {
             Globaldata.idCources = id_course;
-            Globaldata.id_lession = Int32.Parse((from i in db.LESSIONs where i.ID_COURSE==id_course select i.ID_LESSION).FirstOrDefault().ToString());
-            return View(db.LESSIONs.FirstOrDefault(x => x.ID_COURSE == id_course));
+            if (id_lession == 0)
+            {
+                Globaldata.id_lession = Int32.Parse((from i in db.LESSIONs where i.ID_COURSE == id_course select i.ID_LESSION).FirstOrDefault().ToString());
+            }
+            else
+            {
+                Globaldata.id_lession = id_lession;
+            }
+            return View(db.LESSIONs.FirstOrDefault(x => x.ID_COURSE == id_course&&x.ID_LESSION==Globaldata.id_lession));
         }
         public ActionResult ListLession()
         {
