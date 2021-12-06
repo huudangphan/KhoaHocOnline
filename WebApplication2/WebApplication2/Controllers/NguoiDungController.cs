@@ -34,6 +34,7 @@ namespace WebApplication2.Controllers
                 cus.ROLE = 1;
                 db.CUSTOMERs.Add(cus);
                 db.SaveChanges();
+                ViewBag.mess = "Đăng ký tài khoản thành công";
             }
             catch (Exception ex)
             {
@@ -46,6 +47,11 @@ namespace WebApplication2.Controllers
         [HttpGet]
         public ActionResult DangNhap()
         {
+            if(Globaldata.id_cuss!=null)
+            {
+                Globaldata.name = Globaldata.user_name = null;
+                Globaldata.id_cuss = 0;
+            }
             return View();
         }
         [HttpPost]

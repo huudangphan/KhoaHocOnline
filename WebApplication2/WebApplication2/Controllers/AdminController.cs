@@ -62,11 +62,12 @@ namespace WebApplication2.Controllers
                 l.LINK_VIDEO = ls.LINK_VIDEO;
                 db.LESSIONs.Add(l);
                 db.SaveChanges();
+                ViewBag.Error = "Thêm thành công!";
 
             }
-            catch (Exception)
+            catch (Exception ex) 
             {
-
+                string error = ex.Message.ToString();
                 ViewBag.Error = "Xảy ra lỗi, vui lòng thử lại sau!";
             }
             return View();

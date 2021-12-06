@@ -12,13 +12,14 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>CUSTOMER</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
        
         <div class="form-group">
-            @Html.LabelFor(model => model.USER_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @*@Html.LabelFor(model => model.USER_NAME, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="control-label col-md-4"> Tài khoản </div> 
+            <div class="col-md-4">
                 @Html.EditorFor(model => model.USER_NAME, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.USER_NAME, "", new { @class = "text-danger" })
             </div>
@@ -27,17 +28,20 @@
        
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PASSWORD, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PASSWORD, new { htmlAttributes = new { @class = "form-control" } })
+            @*@Html.LabelFor(model => model.PASSWORD, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="control-label col-md-4"> Mật khẩu </div>
+            <div class="col-md-4">
+                @*@Html.EditorFor(model => model.PASSWORD, new { htmlAttributes = new { @class = "form-control" } })*@
+                <input class="form-control text-box single-line" id="PASSWORD" name="PASSWORD" type="password" />
                 @Html.ValidationMessageFor(model => model.PASSWORD, "", new { @class = "text-danger" })
             </div>
         </div>
         <p>@ViewBag.Error</p>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="col-md-offset-4 col-md-8">
+                <input type="submit" value="Đăng nhập" class="btn btn-success" />
+                <button class="btn btn-success"><a href="@Url.Action("DangKy","NguoiDung") "> Đăng ký </a></button> 
             </div>
         </div>
     </div>
