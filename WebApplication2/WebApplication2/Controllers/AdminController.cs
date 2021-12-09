@@ -70,12 +70,50 @@ namespace WebApplication2.Controllers
                 string error = ex.Message.ToString();
                 ViewBag.Error = "Xảy ra lỗi, vui lòng thử lại sau!";
             }
-            return View();
+            return RedirectToAction("DetailCourse", new { id_course = Globaldata.idCources });
         }
         public ActionResult Detail(int id)
         {
 
             return View(db.CMTs.Where(x=>x.ID_LESS==id));
+        }
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                LESSION l = db.LESSIONs.Where(x => x.ID_LESSION == id && x.ID_COURSE == Globaldata.idCources).FirstOrDefault();
+                db.LESSIONs.Remove(l);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                
+            }
+            return View();
+
+        }
+
+        [HttpGet]
+        public PartialViewResult BinhLuan(int id_lession = 0)
+        {
+            if (id_lession == 0)
+            {
+                id_lession = Globaldata.id_lession;
+            }
+            return PartialView(db.CMTs.Where(x => x.ID_LESS == id_lession).ToList());
+
+        }
+        [HttpPost]
+        public PartialViewResult BinhLuan(string BinhLuan)
+        {
+            var cmt = new CMT();
+            cmt.ID_LESS = Globaldata.id_lession;
+            cmt.CMT1 = BinhLuan;
+            db.CMTs.Add(cmt);
+            db.SaveChanges();
+            return PartialView(db.CMTs.Where(x => x.ID_LESS == Globaldata.id_lession).ToList());
         }
     }
 }

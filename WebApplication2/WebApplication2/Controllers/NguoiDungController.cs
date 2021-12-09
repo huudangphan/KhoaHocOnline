@@ -105,7 +105,23 @@ namespace WebApplication2.Controllers
         {
             return View();
         }
-
-
+       
+        [HttpGet]
+        public ActionResult Remove(int id_less)
+        {
+            try
+            {
+                BOOK b = db.BOOKs.Where(x => x.ID_LESSION == id_less && x.ID_CUS == Globaldata.id_cuss).FirstOrDefault();
+                db.BOOKs.Remove(b);
+                db.SaveChanges();
+            }
+            catch (Exception exx)
+            {
+                string er = exx.Message.ToString();
+                ViewBag.error = "Đã xảy ra lỗi";
+            }
+            
+            return View();
+        }
     }
 }

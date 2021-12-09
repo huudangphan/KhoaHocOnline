@@ -5,25 +5,15 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<br /><br /><br /><br /><br /><br /><br />
-<table class="table">
-    <tr>
-        
-        <th>
-            Nhận xét
-        </th>
-        
-    </tr>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
-@foreach (var item in Model) {
-    <tr>
-        
-       
-        <td>
-            @Html.DisplayFor(modelItem => item.CMT1)
-        </td>
-       
-    </tr>
+
+@{
+    Html.RenderAction("BinhLuan", "Admin");
 }
-
-</table>

@@ -22,11 +22,11 @@
            
         </td>
         <td>
-            <a><i class="fas fa-trash-alt"></i></a>
+            <a href="@Url.Action("Remove", "NguoiDung", new {@id_less=item.ID_LESSION})"><i class="fas fa-trash-alt"></i></a>
         </td>
         
         
     </tr>
 }
-
+@ViewBag.error
 </table>

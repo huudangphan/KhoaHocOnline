@@ -1801,6 +1801,9 @@
     <Content Include="Views\NguoiDung\Book.cshtml" />
     <Content Include="Views\Home\Book.cshtml" />
     <Content Include="Views\NguoiDung\TaiKhoan.cshtml" />
+    <Content Include="Views\NguoiDung\Remove.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Admin\BinhLuan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
