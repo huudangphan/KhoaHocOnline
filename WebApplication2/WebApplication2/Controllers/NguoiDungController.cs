@@ -24,17 +24,21 @@ namespace WebApplication2.Controllers
         {
             try
             {
-                var cus = new CUSTOMER();
-                cus.NAME_CUS = model.name;
-                cus.PHONE_CUS = model.phone;
-                cus.EMAIL_CUS = model.email;
-                cus.DATE_CUS = model.date;
-                cus.USER_NAME = model.username;
-                cus.PASSWORD = Globaldata.EnryptString(model.password);
-                cus.ROLE = 1;
-                db.CUSTOMERs.Add(cus);
-                db.SaveChanges();
-                ViewBag.mess = "Đăng ký tài khoản thành công";
+                if (ModelState.IsValid)
+                {
+                    var cus = new CUSTOMER();
+                    cus.NAME_CUS = model.name;
+                    cus.PHONE_CUS = model.phone;
+                    cus.EMAIL_CUS = model.email;
+                    cus.DATE_CUS = model.date;
+                    cus.USER_NAME = model.username;
+                    cus.PASSWORD = Globaldata.EnryptString(model.password);
+                    cus.ROLE = 1;
+                    db.CUSTOMERs.Add(cus);
+                    db.SaveChanges();
+                    ViewBag.mess = "Đăng ký tài khoản thành công";
+                }
+               
             }
             catch (Exception ex)
             {
