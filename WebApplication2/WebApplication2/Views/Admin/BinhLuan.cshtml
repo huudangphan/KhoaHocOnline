@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebApplication2.Models.CMT>
+
+@{
+    ViewBag.Title = "BinhLuan";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="row">
+    @using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <td style="color:black;margin-right:5px;">@Html.TextBox("BinhLuan")</td>
+                <td style="margin-left:5px;"><button type="submit" class="btn btn-success">Bình luận</button></td>
+            </tr>
+        </table>
+
+    }
+
+</div>
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                <p style="color:white"> @Html.DisplayFor(modelItem => item.CMT1)</p>
+
+            </td>
+
+        </tr>
+    }
+
+</table>
